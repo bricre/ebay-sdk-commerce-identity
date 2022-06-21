@@ -3,6 +3,7 @@
 namespace Ebay\Commerce\Identity\Api;
 
 use Ebay\Commerce\Identity\Model\UserResponse;
+use OpenAPI\Runtime\UnexpectedResponse;
 
 class User extends AbstractAPI
 {
@@ -21,9 +22,9 @@ class User extends AbstractAPI
      * method returns mock data. Note: You must use the correct scope or scopes for the
      * data you want returned.
      *
-     * @return UserResponse
+     * @return UserResponse|UnexpectedResponse
      */
-    public function get(): UserResponse
+    public function get()
     {
         return $this->request(
         'getUser',
